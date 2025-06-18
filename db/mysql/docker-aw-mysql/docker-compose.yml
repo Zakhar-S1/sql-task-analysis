@@ -1,0 +1,35 @@
+services:
+  mysql:
+    image: mysql:9.2.0
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: adventureworks
+      # You'll enter the credentials below into phpMyAdmin:
+      MYSQL_ROOT_USER: rootpassword
+      MYSQL_ROOT_PASSWORD: rootpassword
+      # Other test user
+      MYSQL_USER: exampleuser
+      MYSQL_PASSWORD: examplepassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:5.2.2
+    container_name: phpmyadmin
+    restart: always
+    environment:
+      PMA_HOST: mysql
+      PMA_ABSOLUTE_URI: "http://localhost:8088"
+      # Optionally provide the root password to avoid prompt issues
+      MYSQL_ROOT_PASSWORD: rootpassword
+    ports:
+      - "8088:80"
+    depends_on:
+      - mysql
+
+volumes:
+  mysql_data:
