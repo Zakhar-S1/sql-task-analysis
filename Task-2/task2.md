@@ -13,3 +13,10 @@ Calculate median by finding middle position(s): for odd count take middle value,
 Combine all statistics in one CTE, then format with literal strings using UNION ALL
 
 By breaking the problem into logical stages, I can ensure data quality at each step, handle MySQL's median calculation limitations elegantly, and produce exactly the required output format.
+
+## Answer
+
+Metric Value
+Minimum 0.03
+Maximum 26277.78
+Median 71.28

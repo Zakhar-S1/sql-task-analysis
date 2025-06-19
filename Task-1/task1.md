@@ -28,3 +28,10 @@ I could have used a simple VALUES clause to list all letters, but the recursive 
 ## Expected Outcome
 The result will show exactly which letters are playing hide-and-seek in each position, giving a clear picture of alphabet utilization patterns in country codes. Some letters like Q, X, or uncommon combinations will likely be the culprits missing from various positions.
 This approach combines efficiency with elegance - it's both a practical solution and a demonstration of advanced SQL capabilities.
+
+## Answer
+
+letter position_1 position_2 position_3
+J        present    present    MISSING
+Q        present    MISSING    present
+X        MISSING    present    present

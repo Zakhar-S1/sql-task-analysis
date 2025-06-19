@@ -14,3 +14,16 @@ Instead of using LEFT JOIN and dealing with NULL values extensively, I chose INN
 6. Limit to top 10 results;
 
 Start with the relationship: country.Capital = city.ID links countries to their capital cities. Then apply data quality filters: WHERE c.Population > 0 AND city.Population > 0. The next step is adding logical constraint -- city.Population <= c.Population prevents data anomalies. Then calculationg percentage with proper rounding: ROUND((city.Population / c.Population) * 100, 2). As a final main step, sorting ascending because we want the SMALLEST percentages + using LIMIT 10 to get exactly the requested number of results.
+
+## Answer
+
+India - 0.03%
+United States - 0.21%
+Nigeria - 0.31%
+Pakistan - 0.34%
+Tanzania - 0.56%
+China - 0.58%
+Guam - 0.68%
+Côte d'Ivoire - 0.88%
+Bhutan - 1.04%
+Canada - 1.08%

@@ -15,3 +15,7 @@ The obvious approach of just averaging life expectancy across countries treats e
 ## Step-by-Step Reasoning
 
 Start with the relationship: countrylanguage.CountryCode = country.Code to link languages with countries. The next step is calculation of speakers: Population * Percentage / 100 gives real number of people speaking each language. Then apply weighted average -- instead of treating countries equally, weight by actual speaker population. After this add sophistication -- official languages might deserve higher weight since they're more representative. The next step is filtering for significance, only include languages with substantial speaker populations (1M+ speakers). And finally compare methods, that means showing side-by-side results to demonstrate why weighting matters.
+
+## Answer
+
+Weighted average based on the number of language speakers.
